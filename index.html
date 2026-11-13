@@ -88,7 +88,6 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
     </div>
 </div>
  <script>
-const books=[
  // SUPABASE CONNECTION
 const SUPABASE_URL = "https://tgagbqoqvbkqeddqrbyn.supabase.co";
 const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
@@ -202,6 +201,7 @@ checkLogin();
 supabaseClient.auth.onAuthStateChange((event, session) => {
     updateLoginButton(session?.user || null);
 });
+ const books=[
 {id:1,title:"Cozy Little Moments",cat:"Colouring",desc:"Sweet everyday scenes to colour and enjoy.",price:149,emoji:"🧁",cover:"c1",tag:"BESTSELLER",access:"paid",pdf:"pdfs/cozy-little-moments.pdf"},
 {id:2,title:"Cute Animal Friends",cat:"Colouring",desc:"Adorable animal friends for little artists.",price:0,emoji:"🐼",cover:"c1",tag:"FREE",access:"free",pdf:"pdfs/cute-animal-friends.pdf"},
 {id:3,title:"My First Activity Book",cat:"Activity",desc:"Puzzles, matching games and playful fun.",price:0,emoji:"🧩",cover:"c3",tag:"FREE",access:"free",pdf:"pdfs/my-first-activity-book.pdf"},
