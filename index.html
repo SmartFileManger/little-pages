@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <head>
  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WKHLCF8V"></script>
 <script>
@@ -28,6 +29,7 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 <header><div class="wrap nav">
 <a class="brand" href="#">little<span>pages</span><small>BOOKS FOR BIG IMAGINATIONS</small></a>
 <nav class="links"><a href="#books">Shop books</a><a href="#categories">Categories</a><a href="#about">About us</a></nav>
+<button class="cart" id="loginButton" onclick="openLogin()">Login / Sign up</button>
 <button class="cart" onclick="showCart()">🛍 Cart <span id="cartCount">0</span></button>
 </div></header>
 <main>
@@ -49,8 +51,157 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 </main>
 <footer><div class="wrap foot"><div><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Digital books for curious kids.</p></div><div class="footlinks"><a href="#books">Shop</a><a href="#categories">Categories</a><a href="mailto:hello@example.com">Contact</a></div><p>© 2026 Little Pages. All rights reserved.</p></div></footer>
 <div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" onclick="closeModal()">✕</button><div id="modalBody"></div></div></div>
-<script>
+<!-- LOGIN POPUP -->
+<div class="modal-bg" id="loginModal">
+    <div class="modal">
+
+        <button class="close" onclick="closeLogin()">✕</button>
+
+        <div id="loginStep">
+            <h3>Welcome to Little Pages 📚</h3>
+            <p>Enter your email address.</p>
+
+            <input type="email" id="loginEmail"
+                   placeholder="Your email address"
+                   class="search" style="width:100%">
+
+            <button class="primary" onclick="sendOTP()">
+                Send OTP
+            </button>
+        </div>
+
+        <div id="otpStep" style="display:none">
+            <h3>Verify your email ✉️</h3>
+
+            <input type="text" id="otpCode"
+                   placeholder="Enter 6-digit OTP"
+                   maxlength="6" inputmode="numeric"
+                   class="search" style="width:100%">
+
+            <button class="primary" onclick="verifyOTP()">
+                Verify & Login
+            </button>
+        </div>
+
+        <p id="loginMessage" class="notice"></p>
+
+    </div>
+</div>
+ <script>
 const books=[
+ // SUPABASE CONNECTION
+const SUPABASE_URL = "https://tgagbqoqvbkqeddqrbyn.supabase.co";
+const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+// OPEN LOGIN POPUP
+function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+// CLOSE LOGIN POPUP
+function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+}
+
+// SEND OTP
+async function sendOTP() {
+    const email = document.getElementById("loginEmail").value.trim();
+    const message = document.getElementById("loginMessage");
+
+    if (!email) {
+        message.textContent = "Please enter your email.";
+        return;
+    }
+
+    message.textContent = "Sending OTP...";
+
+    const { error } = await supabaseClient.auth.signInWithOtp({
+        email: email,
+        options: { shouldCreateUser: true }
+    });
+
+    if (error) {
+        message.textContent = error.message;
+        return;
+    }
+
+    document.getElementById("loginStep").style.display = "none";
+    document.getElementById("otpStep").style.display = "block";
+
+    message.textContent = "OTP sent! Check your email.";
+}
+
+// VERIFY OTP
+async function verifyOTP() {
+    const email = document.getElementById("loginEmail").value.trim();
+    const token = document.getElementById("otpCode").value.trim();
+    const message = document.getElementById("loginMessage");
+
+    if (!/^\d{6}$/.test(token)) {
+        message.textContent = "Enter a valid 6-digit OTP.";
+        return;
+    }
+
+    message.textContent = "Verifying...";
+
+    const { data, error } = await supabaseClient.auth.verifyOtp({
+        email: email,
+        token: token,
+        type: "email"
+    });
+
+    if (error) {
+        message.textContent = error.message;
+        return;
+    }
+
+    message.textContent = "Login successful!";
+
+    updateLoginButton(data.user);
+    setTimeout(closeLogin, 1500);
+}
+
+// UPDATE BUTTON AFTER LOGIN
+function updateLoginButton(user) {
+    const button = document.getElementById("loginButton");
+
+    if (user) {
+        button.textContent = "Logout";
+        button.onclick = logoutUser;
+    } else {
+        button.textContent = "Login / Sign up";
+        button.onclick = openLogin;
+    }
+}
+
+// LOGOUT
+async function logoutUser() {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
+
+    updateLoginButton(null);
+}
+
+// CHECK LOGIN STATUS
+async function checkLogin() {
+    const { data } = await supabaseClient.auth.getSession();
+    updateLoginButton(data.session?.user || null);
+}
+
+checkLogin();
+
+supabaseClient.auth.onAuthStateChange((event, session) => {
+    updateLoginButton(session?.user || null);
+});
 {id:1,title:"Cozy Little Moments",cat:"Colouring",desc:"Sweet everyday scenes to colour and enjoy.",price:149,emoji:"🧁",cover:"c1",tag:"BESTSELLER",access:"paid",pdf:"pdfs/cozy-little-moments.pdf"},
 {id:2,title:"Cute Animal Friends",cat:"Colouring",desc:"Adorable animal friends for little artists.",price:0,emoji:"🐼",cover:"c1",tag:"FREE",access:"free",pdf:"pdfs/cute-animal-friends.pdf"},
 {id:3,title:"My First Activity Book",cat:"Activity",desc:"Puzzles, matching games and playful fun.",price:0,emoji:"🧩",cover:"c3",tag:"FREE",access:"free",pdf:"pdfs/my-first-activity-book.pdf"},
