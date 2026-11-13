@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://smartfilemanger.github.io/little-pages/sitemap.xml
