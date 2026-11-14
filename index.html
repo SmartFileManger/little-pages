@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WKHLCF8V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Little Pages — Books for Big Imaginations</title>
 <style>
 :root{--ink:#353044;--muted:#777184;--pink:#f6c5d5;--rose:#d96f98;--cream:#fffaf4;--lav:#e9e2fb;--mint:#dff1e7;--yellow:#ffedb8;--line:#eee8e8}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Nunito,"Trebuchet MS",Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0}.wrap{width:min(1160px,92%);margin:auto}
-header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:25px;font-weight:900;letter-spacing:-1px}.brand span{color:var(--rose)}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:700;margin-top:-2px}.links{display:flex;gap:26px;color:#625c6e;font-size:14px;font-weight:700}.cart{background:var(--ink);color:#fff;border-radius:30px;padding:11px 17px;font-weight:800}.hero{padding:55px 0 48px;background:linear-gradient(115deg,#fce5ec,#f8f0ff 55%,#eaf6ed);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:900;color:var(--rose);text-transform:uppercase}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-2px;margin:14px 0}.hero p{color:#6c6575;font-size:17px;line-height:1.7;max-width:520px}.primary{background:var(--rose);color:#fff;padding:14px 22px;border-radius:28px;font-weight:900;display:inline-block;margin-top:12px;box-shadow:0 7px 18px #d96f9833}.hero-art{min-height:270px;display:flex;align-items:center;justify-content:center;position:relative}.book-stack{font-size:95px;filter:drop-shadow(0 15px 12px #8b648522);transform:rotate(-8deg)}.float{position:absolute;font-size:35px}.f1{top:12px;right:18%}.f2{bottom:18px;left:12%}.f3{top:38%;right:4%}
+header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:25px;font-weight:900;letter-spacing:-1px}.brand span{color:var(--rose)}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:700;margin-top:-2px}.links{display:flex;gap:26px;color:#625c6e;font-size:14px;font-weight:700}.cart{background:var(--ink);color:#fff;border-radius:30px;padding:11px 17px;font-weight:800}.login-btn{background:#f8e8ef;color:var(--ink);border:1px solid #efd2df;border-radius:30px;padding:10px 15px;font-weight:900}.auth-status{font-size:11px;color:var(--muted);max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hero{padding:55px 0 48px;background:linear-gradient(115deg,#fce5ec,#f8f0ff 55%,#eaf6ed);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:900;color:var(--rose);text-transform:uppercase}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-2px;margin:14px 0}.hero p{color:#6c6575;font-size:17px;line-height:1.7;max-width:520px}.primary{background:var(--rose);color:#fff;padding:14px 22px;border-radius:28px;font-weight:900;display:inline-block;margin-top:12px;box-shadow:0 7px 18px #d96f9833}.hero-art{min-height:270px;display:flex;align-items:center;justify-content:center;position:relative}.book-stack{font-size:95px;filter:drop-shadow(0 15px 12px #8b648522);transform:rotate(-8deg)}.float{position:absolute;font-size:35px}.f1{top:12px;right:18%}.f2{bottom:18px;left:12%}.f3{top:38%;right:4%}
 .trust{display:flex;gap:24px;flex-wrap:wrap;padding:18px 0;color:#716b79;font-size:13px;font-weight:800}.trust span{display:flex;gap:8px;align-items:center}
 section{padding:46px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.section-head h2{font-size:30px;letter-spacing:-1px;margin:5px 0}.section-head p{color:var(--muted);margin:0}.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.cat{padding:22px;border-radius:18px;display:flex;align-items:center;gap:14px;font-weight:900;transition:.2s}.cat:hover,.product:hover{transform:translateY(-4px)}.cat b{font-size:32px}.cat:nth-child(1){background:#fbe0e9}.cat:nth-child(2){background:#e8e1fa}.cat:nth-child(3){background:#e0f1e7}.cat:nth-child(4){background:#fff0c7}
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}.search{flex:1;min-width:220px;padding:13px 16px;border:1px solid var(--line);border-radius:25px;background:#fff;font-size:14px}.filter{padding:12px 16px;border:1px solid var(--line);border-radius:25px;background:#fff;color:var(--ink);font-weight:700}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s;box-shadow:0 5px 20px #43304c08}.cover{height:205px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.cover .emoji{font-size:76px;filter:drop-shadow(0 6px 4px #55445522)}.cover:after{content:"";position:absolute;width:150px;height:150px;border:2px dashed #ffffff99;border-radius:50%}.c1{background:#f8dbe5}.c2{background:#e6e0fa}.c3{background:#dff0e5}.c4{background:#ffedc2}.c5{background:#dcecf8}.c6{background:#f7e1d1}.c7{background:#eee4f7}.c8{background:#e4efcf}.tag{position:absolute;top:12px;left:12px;background:#fff;border-radius:20px;padding:6px 10px;font-size:10px;font-weight:900;z-index:1}.info{padding:16px}.info h3{font-size:16px;margin:0 0 6px}.info p{font-size:12px;color:var(--muted);margin:0 0 13px}.price-row{display:flex;align-items:center;justify-content:space-between}.price{font-weight:900;font-size:17px}.add{background:var(--ink);color:#fff;border-radius:22px;padding:9px 13px;font-size:12px;font-weight:900}.outline{background:#fff;border:1px solid var(--rose);color:var(--rose);padding:12px 18px;border-radius:24px;font-weight:900}
@@ -23,14 +17,12 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 @media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:180px}.links{display:none}}
 @media(max-width:480px){.products{gap:12px}.cover{height:155px}.cover .emoji{font-size:58px}.info{padding:12px}.info h3{font-size:14px}.add{padding:8px 10px}.categories{gap:9px}.cat{padding:15px;font-size:13px}.section-head{align-items:start;flex-direction:column}.banner{padding:23px}.banner .big{font-size:44px}}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#">little<span>pages</span><small>BOOKS FOR BIG IMAGINATIONS</small></a>
 <nav class="links"><a href="#books">Shop books</a><a href="#categories">Categories</a><a href="#about">About us</a></nav>
-<button class="cart" id="loginButton" onclick="openLogin()">Login/Sign up</button>
-<button class="cart" onclick="showCart()">🛍 Cart <span id="cartCount">0</span></button>
+<div style="display:flex;align-items:center;gap:9px"><button class="login-btn" id="authButton" onclick="handleAuthButton()">Login / Sign up</button><span class="auth-status" id="authStatus"></span><button class="cart" onclick="showCart()">🛍 Cart <span id="cartCount">0</span></button></div>
 </div></header>
 <main>
 <div class="hero"><div class="wrap hero-grid">
@@ -50,167 +42,78 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 <div class="wrap"><div class="banner" id="about"><div><div class="eyebrow">A happy little reading corner</div><h2>Make room for imagination.</h2><p>Fun, thoughtful printables for creative days at home.</p></div><div class="big">🌼📚</div></div></div>
 </main>
 <footer><div class="wrap foot"><div><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Digital books for curious kids.</p></div><div class="footlinks"><a href="#books">Shop</a><a href="#categories">Categories</a><a href="mailto:hello@example.com">Contact</a></div><p>© 2026 Little Pages. All rights reserved.</p></div></footer>
+<div class="modal-bg" id="authModal" onclick="if(event.target===this)closeAuth()"><div class="modal">
+<button class="close" onclick="closeAuth()">✕</button>
+<div id="authStepEmail"><div class="eyebrow">Welcome to Little Pages</div><h3>Login or create your account ✨</h3><p>Enter your email and we'll send you a one-time verification code.</p><label for="authEmail" class="notice">Email address</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" style="width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px;font:inherit"><button class="primary" style="width:100%;border:0" onclick="sendEmailOtp()">Send 6-digit code</button><p id="authMessage" class="notice" aria-live="polite"></p></div>
+<div id="authStepOtp" style="display:none"><div class="eyebrow">One more step</div><h3>Check your email 📩</h3><p>Enter the 6-digit code we sent to <b id="otpEmailLabel"></b>.</p><input id="authOtp" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6-digit code" style="width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px;font:inherit;letter-spacing:5px;text-align:center"><button class="primary" style="width:100%;border:0" onclick="verifyEmailOtp()">Verify and log in</button><button class="outline" style="width:100%;margin-top:10px" onclick="backToEmail()">Use a different email</button><p id="otpMessage" class="notice" aria-live="polite"></p></div>
+</div></div>
 <div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" onclick="closeModal()">✕</button><div id="modalBody"></div></div></div>
-<!-- LOGIN POPUP -->
-<div class="modal-bg" id="loginModal">
-    <div class="modal">
-
-        <button class="close" onclick="closeLogin()">✕</button>
-
-        <div id="loginStep">
-            <h3>Welcome to Little Pages 📚</h3>
-            <p>Enter your email address.</p>
-
-            <input type="email" id="loginEmail"
-                   placeholder="Your email address"
-                   class="search" style="width:100%">
-
-            <button class="primary" onclick="sendOTP()">
-                Send OTP
-            </button>
-        </div>
-
-        <div id="otpStep" style="display:none">
-            <h3>Verify your email ✉️</h3>
-
-            <input type="text" id="otpCode"
-                   placeholder="Enter 6-digit OTP"
-                   maxlength="6" inputmode="numeric"
-                   class="search" style="width:100%">
-
-            <button class="primary" onclick="verifyOTP()">
-                Verify & Login
-            </button>
-        </div>
-
-        <p id="loginMessage" class="notice"></p>
-
-    </div>
-</div>
- <script>
- // SUPABASE CONNECTION
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// Replace the placeholder below with your Supabase project's publishable (anon) key.
+// Never put your Supabase service_role or secret key in this public website.
 const SUPABASE_URL = "https://tgagbqoqvbkqeddqrbyn.supabase.co";
-const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
-
-const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-
-// OPEN LOGIN POPUP
-function openLogin() {
-    document.getElementById("loginModal").style.display = "flex";
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE";
+let supabaseClient = null;
+let pendingAuthEmail = "";
+if (window.supabase && SUPABASE_PUBLISHABLE_KEY !== "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE") {
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 }
-
-// CLOSE LOGIN POPUP
-function closeLogin() {
-    document.getElementById("loginModal").style.display = "none";
+function openAuth(){
+  document.getElementById('authModal').style.display='flex';
+  document.getElementById('authStepEmail').style.display='block';
+  document.getElementById('authStepOtp').style.display='none';
+  document.getElementById('authMessage').textContent='';
 }
-
-// SEND OTP
-async function sendOTP() {
-    const email = document.getElementById("loginEmail").value.trim();
-    const message = document.getElementById("loginMessage");
-
-    if (!email) {
-        message.textContent = "Please enter your email.";
-        return;
-    }
-
-    message.textContent = "Sending OTP...";
-
-    const { error } = await supabaseClient.auth.signInWithOtp({
-        email: email,
-        options: { shouldCreateUser: true }
-    });
-
-    if (error) {
-        message.textContent = error.message;
-        return;
-    }
-
-    document.getElementById("loginStep").style.display = "none";
-    document.getElementById("otpStep").style.display = "block";
-
-    message.textContent = "OTP sent! Check your email.";
+function closeAuth(){document.getElementById('authModal').style.display='none'}
+function backToEmail(){document.getElementById('authStepOtp').style.display='none';document.getElementById('authStepEmail').style.display='block'}
+function handleAuthButton(){
+  if(!supabaseClient){openAuth();document.getElementById('authMessage').textContent='Setup needed: add your Supabase publishable key in index.html first.';return;}
+  supabaseClient.auth.getSession().then(({data})=>{if(data.session){if(confirm('You are signed in. Would you like to log out?'))supabaseClient.auth.signOut();}else openAuth();});
 }
-
-// VERIFY OTP
-async function verifyOTP() {
-    const email = document.getElementById("loginEmail").value.trim();
-    const token = document.getElementById("otpCode").value.trim();
-    const message = document.getElementById("loginMessage");
-
-    if (!/^\d{6}$/.test(token)) {
-        message.textContent = "Enter a valid 6-digit OTP.";
-        return;
-    }
-
-    message.textContent = "Verifying...";
-
-    const { data, error } = await supabaseClient.auth.verifyOtp({
-        email: email,
-        token: token,
-        type: "email"
-    });
-
-    if (error) {
-        message.textContent = error.message;
-        return;
-    }
-
-    message.textContent = "Login successful!";
-
-    updateLoginButton(data.user);
-    setTimeout(closeLogin, 1500);
+async function sendEmailOtp(){
+  const email=document.getElementById('authEmail').value.trim();
+  const message=document.getElementById('authMessage');
+  if(!supabaseClient){message.textContent='Please add your Supabase publishable key in index.html first.';return;}
+  if(!email){message.textContent='Please enter your email address.';return;}
+  message.textContent='Sending your code…';
+  const {error}=await supabaseClient.auth.signInWithOtp({email,options:{shouldCreateUser:true}});
+  if(error){message.textContent=error.message;return;}
+  pendingAuthEmail=email;
+  document.getElementById('otpEmailLabel').textContent=email;
+  document.getElementById('authStepEmail').style.display='none';
+  document.getElementById('authStepOtp').style.display='block';
+  document.getElementById('otpMessage').textContent='A code has been requested. Check your inbox and spam folder.';
 }
-
-// UPDATE BUTTON AFTER LOGIN
-function updateLoginButton(user) {
-    const button = document.getElementById("loginButton");
-
-    if (user) {
-        button.textContent = "Logout";
-        button.onclick = logoutUser;
-    } else {
-        button.textContent = "Login / Sign up";
-        button.onclick = openLogin;
-    }
+async function verifyEmailOtp(){
+  const token=document.getElementById('authOtp').value.trim();
+  const message=document.getElementById('otpMessage');
+  if(!/^\d{6}$/.test(token)){message.textContent='Please enter the 6-digit code.';return;}
+  message.textContent='Verifying…';
+  const {error}=await supabaseClient.auth.verifyOtp({email:pendingAuthEmail,token,type:'email'});
+  if(error){message.textContent=error.message;return;}
+  message.textContent='You are logged in!';
+  setTimeout(closeAuth,700);
 }
-
-// LOGOUT
-async function logoutUser() {
-    const { error } = await supabaseClient.auth.signOut();
-
-    if (error) {
-        alert(error.message);
-        return;
-    }
-
-    updateLoginButton(null);
+function updateAuthUI(session){
+  const button=document.getElementById('authButton');
+  const status=document.getElementById('authStatus');
+  if(session){button.textContent='Log out';status.textContent=session.user.email||'Signed in';}
+  else{button.textContent='Login / Sign up';status.textContent='';}
 }
-
-// CHECK LOGIN STATUS
-async function checkLogin() {
-    const { data } = await supabaseClient.auth.getSession();
-    updateLoginButton(data.session?.user || null);
+if(supabaseClient){
+  supabaseClient.auth.getSession().then(({data})=>updateAuthUI(data.session));
+  supabaseClient.auth.onAuthStateChange((_event,session)=>updateAuthUI(session));
 }
-
-checkLogin();
-
-supabaseClient.auth.onAuthStateChange((event, session) => {
-    updateLoginButton(session?.user || null);
-});
- const books=[
+const books=[
 {id:1,title:"Cozy Little Moments",cat:"Colouring",desc:"Sweet everyday scenes to colour and enjoy.",price:149,emoji:"🧁",cover:"c1",tag:"BESTSELLER",access:"paid",pdf:"pdfs/cozy-little-moments.pdf"},
-{id:2,title:"Cute Animal Friends",cat:"Colouring",desc:"Adorable animal friends for little artists.",price:0,emoji:"🐼",cover:"c1",tag:"FREE",access:"free",pdf:"pdfs/cute-animal-friends.pdf"},
-{id:3,title:"My First Activity Book",cat:"Activity",desc:"Puzzles, matching games and playful fun.",price:0,emoji:"🧩",cover:"c3",tag:"FREE",access:"free",pdf:"pdfs/my-first-activity-book.pdf"},
+{id:2,title:"Cute Animal Friends",cat:"Colouring",desc:"Adorable animal friends for little artists.",price:0,emoji:"🐼",cover:"c2",tag:"FREE",access:"free",pdf:"pdfs/cute-animal-friends.pdf"},
+{id:3,title:"My First Activity Book",cat:"Activity",desc:"Puzzles, matching games and playful fun.",price:99,emoji:"🧩",cover:"c3",tag:"",access:"paid",pdf:"pdfs/my-first-activity-book.pdf"},
 {id:4,title:"Magical Garden Stories",cat:"Story",desc:"A gentle story filled with wonder.",price:0,emoji:"🦋",cover:"c4",tag:"FREE",access:"free",pdf:"pdfs/magical-garden-stories.pdf"},
 {id:5,title:"ABC & 123 Practice",cat:"Learning",desc:"A cheerful introduction to letters and numbers.",price:119,emoji:"🔤",cover:"c5",tag:"",access:"paid",pdf:"pdfs/abc-123-practice.pdf"},
 {id:6,title:"Little Chef Colouring",cat:"Colouring",desc:"Cute kitchen scenes and tasty adventures.",price:139,emoji:"🍓",cover:"c6",tag:"",access:"paid",pdf:"pdfs/little-chef-colouring.pdf"},
 {id:7,title:"Doodle & Draw",cat:"Activity",desc:"Creative prompts for budding young artists.",price:0,emoji:"🎨",cover:"c7",tag:"FREE",access:"free",pdf:"pdfs/doodle-and-draw.pdf"},
-{id:8,title:"Amazing Nature for Kids",cat:"Learning",desc:"Explore plants, bugs and the natural world.",price:129,emoji:"🌿",cover:"c8",tag:"",access:"paid",pdf:"pdfs/amazing-nature-for-kids.pdf"},
-{id:9,title: "Animals Colouring Book",cat: "Colouring",desc: "Discover and enjoy beautiful animal illustrations.",price: 0,emoji: "🐼",cover:"c1",tag:"FREE",access:"free",pdf:"pdfs/Animals.pdf"}
+{id:8,title:"Amazing Nature for Kids",cat:"Learning",desc:"Explore plants, bugs and the natural world.",price:129,emoji:"🌿",cover:"c8",tag:"",access:"paid",pdf:"pdfs/amazing-nature-for-kids.pdf"}
 ];
 let cart=[];
 function render(){const q=document.getElementById('search').value.toLowerCase(),f=document.getElementById('filter').value;const list=books.filter(b=>(f==='All'||b.cat===f)&&(b.title.toLowerCase().includes(q)||b.desc.toLowerCase().includes(q)));document.getElementById('products').innerHTML=list.map(b=>`<article class="product"><div class="cover ${b.cover}"><span class="tag">${b.tag||b.cat.toUpperCase()}</span><span class="emoji">${b.emoji}</span></div><div class="info"><h3>${b.title}</h3><p>${b.desc}</p><div class="price-row"><span class="price">${b.access==="free"?"Free":"₹"+b.price}</span><button class="add" onclick="${b.access==="free"?"downloadFree("+b.id+")":"addCart("+b.id+")"}">${b.access==="free"?"⬇ Download":"＋ Add"}</button></div><button class="outline" style="width:100%;margin-top:10px;padding:8px" onclick="preview(${b.id})">Quick preview</button></div></article>`).join('')||'<p>No books found. Try another search.</p>'}
