@@ -120,20 +120,30 @@ function render(){const q=document.getElementById('search').value.toLowerCase(),
 function choose(c){document.getElementById('filter').value=c;setTimeout(render,0)}
 function addCart(id){const b=books.find(x=>x.id===id);cart.push(b);document.getElementById('cartCount').textContent=cart.length}
 function showCart(){document.getElementById('modalBody').innerHTML=`<h3>Your shopping cart 🛍</h3>${cart.length?`<ul class="cart-list">${cart.map(b=>`<li>${b.title} — ₹${b.price}</li>`).join('')}</ul><h3>Total: ₹${cart.reduce((s,b)=>s+b.price,0)}</h3><button class="primary" onclick="checkout()">Continue to checkout</button>`:'<p>Your cart is waiting for a lovely book!</p>'}<p class="notice">Local demo only: payment processing is not connected. Free books download directly; paid books must be delivered securely after a real payment integration before going online.</p>`;document.getElementById('modal').style.display='flex'}
-function preview(id){
- const b=books.find(x=>x.id===id);
- const action=b.access==="free"
-   ? `<a class="primary" href="${b.pdf}" download>⬇ Download free PDF</a>`
-   : `<button class="primary" onclick="addCart(${b.id});closeModal()">Add to cart — ₹${b.price}</button>`;
- document.getElementById('modalBody').innerHTML=`
-  <div style="font-size:65px;text-align:center;background:#f8edf2;border-radius:15px;padding:20px">${b.emoji}</div>
-  <div class="eyebrow" style="margin-top:18px">${b.cat} • DIGITAL PDF • ${b.access==="free"?"FREE":"PAID"}</div>
-  <h3>${b.title}</h3><p>${b.desc}</p>
-  <p class="notice">To preview the real book, place its PDF in the website's <b>pdfs</b> folder using this filename: <b>${b.pdf.split('/').pop()}</b>.</p>
-  ${action}
-  ${b.access==="paid"?'<p class="notice">Local demo only: checkout does not take payment or unlock a paid download. Do not publish paid PDF files in a public folder.</p>':''}`;
- document.getElementById('modal').style.display='flex';
+function preview(id) {
+    const b = books.find(x => x.id === id);
+
+    const action = b.access === "free"
+        ? `<a class="primary" href="${b.pdf}" download>⬇ Download free PDF</a>`
+        : `<button class="primary" onclick="addCart(${b.id});closeModal()">Add to cart — ₹${b.price}</button>`;
+
+    document.getElementById('modalBody').innerHTML = `
+        <h3>${b.title}</h3>
+        <p>${b.desc}</p>
+
+        <iframe
+            src="${b.pdf}#toolbar=0"
+            width="100%"
+            height="450"
+            style="border:1px solid #eee;border-radius:12px">
+        </iframe>
+
+        ${action}
+    `;
+
+    document.getElementById('modal').style.display = 'flex';
 }
+
 function downloadFree(id){
  const b=books.find(x=>x.id===id);
  const link=document.createElement('a');link.href=b.pdf;link.download=b.pdf.split('/').pop();document.body.appendChild(link);link.click();link.remove();
