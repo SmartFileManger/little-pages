@@ -16,73 +16,17 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 .modal-bg{display:none;position:fixed;inset:0;background:#211b2bb3;z-index:30;align-items:center;justify-content:center;padding:20px}.modal{background:#fff;border-radius:22px;padding:26px;max-width:420px;width:100%;position:relative}.modal h3{margin-top:0}.close{position:absolute;right:16px;top:12px;background:#f5f0f3;border-radius:50%;width:32px;height:32px}.cart-list{padding-left:18px;color:var(--muted);line-height:1.9}.notice{font-size:12px;color:var(--muted);line-height:1.6}
 @media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:180px}.links{display:none}}
 @media(max-width:480px){.products{gap:12px}.cover{height:155px}.cover .emoji{font-size:58px}.info{padding:12px}.info h3{font-size:14px}.add{padding:8px 10px}.categories{gap:9px}.cat{padding:15px;font-size:13px}.section-head{align-items:start;flex-direction:column}.banner{padding:23px}.banner .big{font-size:44px}}
-
-.download-section {
-    padding: 60px 6%;
-    background: #fffaf2;
-    text-align: center;
-}
-
-.section-heading h2 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.section-heading p {
-    color: #777;
-    margin-bottom: 35px;
-}
-
-.sheet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.sheet-card {
-    background: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    transition: transform 0.3s;
-}
-
-.sheet-card:hover {
-    transform: translateY(-6px);
-}
-
-.sheet-icon {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-.sheet-card h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.sheet-card p {
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.download-btn {
-    display: inline-block;
-    background: #ff914d;
-    color: white;
-    padding: 11px 22px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.download-btn:hover {
-    background: #f4772b;
-}
-
+.download-section {padding: 60px 6%;background: #fffaf2;text-align: center;}
+.section-heading h2 {font-size: 32px;color: #333;margin-bottom: 10px;}
+.section-heading p {color: #777;margin-bottom: 35px;}
+.sheet-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));gap: 25px;max-width: 1100px;margin: auto;}
+.sheet-card {background: white;padding: 25px;border-radius: 16px;box-shadow: 0 4px 15px rgba(0,0,0,0.07);transition: transform 0.3s;}
+.sheet-card:hover {transform: translateY(-6px);}
+.sheet-icon {font-size: 55px;margin-bottom: 15px;}
+.sheet-card h3 {color: #333;margin-bottom: 10px;}
+.sheet-card p {color: #777;margin-bottom: 20px;}
+.download-btn {display: inline-block;background: #ff914d;color: white;padding: 11px 22px;border-radius: 25px;text-decoration: none;font-weight: bold;}
+.download-btn:hover {background: #f4772b;}
 </style>
 </head>
 <body>
@@ -109,54 +53,16 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 <div class="wrap"><div class="banner" id="about"><div><div class="eyebrow">A happy little reading corner</div><h2>Make room for imagination.</h2><p>Fun, thoughtful printables for creative days at home.</p></div><div class="big">🌼📚</div></div></div>
 </main>
 <section id="download-sheets" class="download-section">
-    <div class="section-heading">
-        <h2>Free Download Sheets</h2>
-        <p>Fun learning worksheets for little learners!</p>
-    </div>
-
-    <div class="sheet-grid">
-
-        <div class="sheet-card">
-            <div class="sheet-icon">🔤</div>
-            <h3>Alphabet Worksheets</h3>
-            <p>Learn letters A to Z.</p>
-            <a href="sheets/alphabet-worksheets.pdf"
-               download class="download-btn">
-                Download PDF
-            </a>
-        </div>
-
-        <div class="sheet-card">
-            <div class="sheet-icon">🔢</div>
-            <h3>Number Practice</h3>
-            <p>Practice counting and numbers.</p>
-            <a href="sheets/number-practice.pdf"
-               download class="download-btn">
-                Download PDF
-            </a>
-        </div>
-
-        <div class="sheet-card">
-            <div class="sheet-icon">🐼</div>
-            <h3>Animal Coloring</h3>
-            <p>Color your favorite animals.</p>
-            <a href="sheets/animal-coloring.pdf"
-               download class="download-btn">
-                Download PDF
-            </a>
-        </div>
-
-        <div class="sheet-card">
-            <div class="sheet-icon">🧩</div>
-            <h3>Fun Activities</h3>
-            <p>Enjoy puzzles and activities.</p>
-            <a href="sheets/fun-activities.pdf"
-               download class="download-btn">
-                Download PDF
-            </a>
-        </div>
-
-    </div>
+<div class="section-heading"><h2>Free Download Sheets</h2><p>Fun learning worksheets for little learners!</p></div>
+<div class="sheet-grid">
+<div class="sheet-card">
+<div class="sheet-icon">🔤</div><h3>Alphabet Worksheets</h3><p>Learn letters A to Z.</p><a href="sheets/alphabet-worksheets.pdf"download class="download-btn">Download PDF</a></div>
+<div class="sheet-card">
+<div class="sheet-icon">🔢</div><h3>Number Practice</h3><p>Practice counting and numbers.</p><a href="sheets/number-practice.pdf"download class="download-btn">Download PDF</a></div>
+<div class="sheet-card"><div class="sheet-icon">🐼</div><h3>Animal Coloring</h3><p>Color your favorite animals.</p><a href="sheets/animal-coloring.pdf"download class="download-btn">Download PDF</a></div>
+<div class="sheet-card">
+<div class="sheet-icon">🧩</div><h3>Fun Activities</h3><p>Enjoy puzzles and activities.</p><a href="sheets/fun-activities.pdf"download class="download-btn">Download PDF</a></div>
+</div>
 </section>
 
 <footer><div class="wrap foot"><div><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Digital books for curious kids.</p></div><div class="footlinks"><a href="#books">Shop</a><a href="#categories">Categories</a><a href="mailto:hello@example.com">Contact</a></div><p>© 2026 Little Pages. All rights reserved.</p></div></footer>
