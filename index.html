@@ -27,6 +27,32 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 .sheet-card p {color: #777;margin-bottom: 20px;}
 .download-btn {display: inline-block;background: #ff914d;color: white;padding: 11px 22px;border-radius: 25px;text-decoration: none;font-weight: bold;}
 .download-btn:hover {background: #f4772b;}
+
+/* Download Sheets */
+#download-sheets{scroll-margin-top:90px}
+.sheet-toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 24px}
+.sheet-toolbar .search{flex:1;min-width:220px}
+.sheet-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.sheet-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 7px 24px #43304c0a;transition:transform .2s,box-shadow .2s}
+.sheet-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px #43304c14}
+.sheet-art{min-height:150px;display:flex;align-items:center;justify-content:center;font-size:62px;position:relative}
+.sheet-card:nth-child(4n+1) .sheet-art{background:#fbe0e9}
+.sheet-card:nth-child(4n+2) .sheet-art{background:#e8e1fa}
+.sheet-card:nth-child(4n+3) .sheet-art{background:#e0f1e7}
+.sheet-card:nth-child(4n+4) .sheet-art{background:#fff0c7}
+.sheet-card-content{padding:18px}
+.sheet-card h3{font-size:17px;margin:0 0 7px;color:var(--ink)}
+.sheet-card p{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 16px;min-height:40px}
+.sheet-category{display:inline-block;background:#f8edf2;color:#9d496c;border-radius:20px;padding:5px 10px;font-size:10px;font-weight:900;margin-bottom:10px}
+.download-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;background:var(--rose);color:#fff;padding:11px 16px;border-radius:24px;font-size:13px;font-weight:900;transition:background .2s}
+.download-btn:hover{background:#c65d85}
+.sheet-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.print-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;background:#fff;border:1px solid var(--rose);color:var(--rose);padding:11px 12px;border-radius:24px;font-size:13px;font-weight:900;transition:background .2s,color .2s}
+.print-btn:hover{background:#fbedf2;color:#a9436d}
+.no-sheets{display:none;background:#fff;border:1px dashed #e5cbd6;border-radius:16px;padding:24px;text-align:center;color:var(--muted);grid-column:1/-1}
+@media(max-width:850px){.sheet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.sheet-grid{gap:12px}.sheet-card-content{padding:13px}.sheet-art{min-height:120px;font-size:52px}.sheet-card h3{font-size:15px}.sheet-card p{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -51,89 +77,87 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 <div class="products" id="products"></div>
 </div></section>
 <div class="wrap"><div class="banner" id="about"><div><div class="eyebrow">A happy little reading corner</div><h2>Make room for imagination.</h2><p>Fun, thoughtful printables for creative days at home.</p></div><div class="big">🌼📚</div></div></div>
-</main>
-
 <section id="download-sheets">
-    <div class="wrap">
-
-        <div class="section-head">
-            <div>
-                <div class="eyebrow">Print, Play & Learn</div>
-                <h2>Free Download Sheets</h2>
-                <p>Fun printable worksheets for curious little minds.</p>
-            </div>
-        </div>
-
-        <!-- Sheets Search and Category Filter -->
-        <div class="toolbar">
-            <input
-                class="search"
-                type="text"
-                id="sheetSearch"
-                placeholder="🔎 Search sheets..."
-            >
-
-            <select class="filter" id="sheetCategory">
-                <option value="All">All Sheets</option>
-                <option value="Colouring">Colouring Sheets</option>
-                <option value="Activity">Activity Sheets</option>
-                <option value="Story">Story Worksheets</option>
-                <option value="Learning">Learning Worksheets</option>
-            </select>
-        </div>
-
-        <!-- Sheets Cards -->
-        <div class="sheet-grid" id="sheetGrid">
-
-            <div class="sheet-card" data-category="Learning">
-                <div class="sheet-icon">🔤</div>
-                <h3>Alphabet Worksheets</h3>
-                <p>Learn letters A to Z.</p>
-                <a href="sheets/alphabet-worksheets.pdf"
-                   download class="download-btn">
-                    ⬇ Download PDF
-                </a>
-            </div>
-
-            <div class="sheet-card" data-category="Learning">
-                <div class="sheet-icon">🔢</div>
-                <h3>Number Practice</h3>
-                <p>Practice counting and numbers.</p>
-                <a href="sheets/number-practice.pdf"
-                   download class="download-btn">
-                    ⬇ Download PDF
-                </a>
-            </div>
-
-            <div class="sheet-card" data-category="Colouring">
-                <div class="sheet-icon">🐼</div>
-                <h3>Animal Coloring</h3>
-                <p>Color your favorite animals.</p>
-                <a href="sheets/animal-coloring.pdf"
-                   download class="download-btn">
-                    ⬇ Download PDF
-                </a>
-            </div>
-
-            <div class="sheet-card" data-category="Activity">
-                <div class="sheet-icon">🧩</div>
-                <h3>Fun Activities</h3>
-                <p>Enjoy puzzles and activities.</p>
-                <a href="sheets/fun-activities.pdf"
-                   download class="download-btn">
-                    ⬇ Download PDF
-                </a>
-            </div>
-
-        </div>
-
-        <p id="noSheets" style="display:none;text-align:center;color:var(--muted);margin-top:25px;">
-            No sheets found. Try another search or category.
-        </p>
-
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Print, play & learn</div>
+        <h2>Free Download Sheets</h2>
+        <p>Fun printable worksheets for little learners.</p>
+      </div>
     </div>
-</section>
 
+    <div class="sheet-toolbar">
+      <input class="search" type="search" id="sheetSearch"
+             placeholder="🔎  Search worksheets..."
+             aria-label="Search worksheets">
+      <select class="filter" id="sheetCategory" aria-label="Filter worksheets by category">
+        <option value="All">All categories</option>
+        <option value="Colouring">Colouring</option>
+        <option value="Activity">Activity</option>
+        <option value="Story">Story</option>
+        <option value="Learning">Learning</option>
+      </select>
+    </div>
+
+    <div class="sheet-grid" id="sheetGrid">
+      <article class="sheet-card" data-category="Learning">
+        <div class="sheet-art" aria-hidden="true">🔤</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Learning</span>
+          <h3>Alphabet Worksheets</h3>
+          <p>Learn and practise letters from A to Z.</p>
+          <div class="sheet-actions">
+            <a class="download-btn" href="sheets/alphabet-worksheets.pdf" download>⬇ Download PDF</a>
+            <a class="print-btn" href="sheets/alphabet-worksheets.pdf" target="_blank" rel="noopener">🖨️ Print</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sheet-card" data-category="Learning">
+        <div class="sheet-art" aria-hidden="true">🔢</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Learning</span>
+          <h3>Number Practice</h3>
+          <p>Build number skills with counting and tracing practice.</p>
+          <div class="sheet-actions">
+            <a class="download-btn" href="sheets/number-practice.pdf" download>⬇ Download PDF</a>
+            <a class="print-btn" href="sheets/number-practice.pdf" target="_blank" rel="noopener">🖨️ Print</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sheet-card" data-category="Colouring">
+        <div class="sheet-art" aria-hidden="true">🐼</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Colouring</span>
+          <h3>Animal Coloring</h3>
+          <p>Bring friendly animal pictures to life with colour.</p>
+          <div class="sheet-actions">
+            <a class="download-btn" href="sheets/animal-coloring.pdf" download>⬇ Download PDF</a>
+            <a class="print-btn" href="sheets/animal-coloring.pdf" target="_blank" rel="noopener">🖨️ Print</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sheet-card" data-category="Activity">
+        <div class="sheet-art" aria-hidden="true">🧩</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Activity</span>
+          <h3>Fun Activities</h3>
+          <p>Enjoy playful puzzles, games and brain-teasing activities.</p>
+          <div class="sheet-actions">
+            <a class="download-btn" href="sheets/fun-activities.pdf" download>⬇ Download PDF</a>
+            <a class="print-btn" href="sheets/fun-activities.pdf" target="_blank" rel="noopener">🖨️ Print</a>
+          </div>
+        </div>
+      </article>
+
+      <p class="no-sheets" id="noSheets">No worksheets found. Try another search or category.</p>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer><div class="wrap foot"><div><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Digital books for curious kids.</p></div><div class="footlinks"><a href="#books">Shop</a><a href="#categories">Categories</a><a href="mailto:hello@example.com">Contact</a></div><p>© 2026 Little Pages. All rights reserved.</p></div></footer>
 <div class="modal-bg" id="authModal" onclick="if(event.target===this)closeAuth()"><div class="modal">
@@ -245,51 +269,36 @@ function downloadFree(id){
 function checkout(){document.getElementById('modalBody').innerHTML='<h3>Almost ready! ✨</h3><p>This is a front-end demo. Connect a payment provider and secure digital file delivery before accepting real orders.</p><p class="notice">This local version cannot verify payments or protect paid files. Before publishing, connect a payment provider and deliver paid PDFs from a protected server only after payment succeeds.</p>'}
 function closeModal(){document.getElementById('modal').style.display='none'}
 
-
-// DOWNLOAD SHEETS SEARCH AND CATEGORY FILTER
-
-const sheetSearch = document.getElementById("sheetSearch");
-const sheetCategory = document.getElementById("sheetCategory");
-const sheetCards = document.querySelectorAll("#sheetGrid .sheet-card");
-const noSheets = document.getElementById("noSheets");
+// Independent search and category filter for Download Sheets.
+const sheetSearch = document.getElementById('sheetSearch');
+const sheetCategory = document.getElementById('sheetCategory');
+const sheetCards = document.querySelectorAll('#sheetGrid .sheet-card');
+const noSheets = document.getElementById('noSheets');
 
 function renderSheets() {
+  const query = sheetSearch.value.trim().toLowerCase();
+  const category = sheetCategory.value;
+  let visibleCount = 0;
 
-    const searchText = sheetSearch.value.toLowerCase().trim();
-    const selectedCategory = sheetCategory.value;
+  sheetCards.forEach(card => {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const description = card.querySelector('p').textContent.toLowerCase();
+    const cardCategory = card.dataset.category;
+    const matchesText = title.includes(query) || description.includes(query);
+    const matchesCategory = category === 'All' || cardCategory === category;
+    const visible = matchesText && matchesCategory;
 
-    let visibleCount = 0;
+    card.style.display = visible ? '' : 'none';
+    if (visible) visibleCount++;
+  });
 
-    sheetCards.forEach(card => {
-
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        const description = card.querySelector("p").textContent.toLowerCase();
-        const category = card.dataset.category;
-
-        const matchesSearch =
-            title.includes(searchText) ||
-            description.includes(searchText);
-
-        const matchesCategory =
-            selectedCategory === "All" ||
-            category === selectedCategory;
-
-        const show = matchesSearch && matchesCategory;
-
-        card.style.display = show ? "" : "none";
-
-        if (show) {
-            visibleCount++;
-        }
-    });
-
-    noSheets.style.display = visibleCount === 0 ? "block" : "none";
+  noSheets.style.display = visibleCount === 0 ? 'block' : 'none';
 }
 
-// Listen for search and dropdown changes
-sheetSearch.addEventListener("input", renderSheets);
-sheetCategory.addEventListener("change", renderSheets);
-  
+sheetSearch.addEventListener('input', renderSheets);
+sheetCategory.addEventListener('change', renderSheets);
+
 render();
+renderSheets();
 </script>
 </body></html>
