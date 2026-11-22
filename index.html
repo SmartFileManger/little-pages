@@ -126,6 +126,191 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
     }
 }
 
+/* =================================
+   LITTLE PAGES - DOWNLOAD SHEETS
+================================= */
+
+#sheetGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 28px;
+}
+
+#sheetGrid .sheet-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #f1dce5;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(53, 48, 68, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#sheetGrid .sheet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(53, 48, 68, 0.12);
+}
+
+#sheetGrid .sheet-art {
+    min-height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0f5;
+    font-size: 58px;
+}
+
+#sheetGrid .sheet-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+#sheetGrid .sheet-category {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 5px 11px;
+    border-radius: 20px;
+    background: #fde5ee;
+    color: #b84270;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#sheetGrid .sheet-card h3 {
+    margin: 13px 0 8px;
+    color: #353044;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#sheetGrid .sheet-card p {
+    margin: 0 0 20px;
+    color: #777184;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#sheetGrid .sheet-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+#sheetGrid .sheet-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex: 1;
+    min-width: 0;
+    min-height: 43px;
+    padding: 9px 10px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+#sheetGrid .download-btn {
+    background: #e96d9c;
+    color: #fff;
+}
+
+#sheetGrid .print-btn {
+    background: #353044;
+    color: #fff;
+}
+
+#sheetGrid .sheet-action:hover {
+    opacity: 0.88;
+}
+
+#sheetGrid .action-icon {
+    font-size: 15px;
+}
+
+/* Search and filter controls */
+#sheetSearch,
+#sheetCategory,
+#classFilter {
+    min-height: 46px;
+    padding: 10px 14px;
+    border: 1px solid #ead6df;
+    border-radius: 10px;
+    background: #fff;
+    color: #353044;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#sheetSearch:focus,
+#sheetCategory:focus,
+#classFilter:focus {
+    border-color: #e96d9c;
+    box-shadow: 0 0 0 3px rgba(233, 109, 156, 0.12);
+}
+
+/* Worksheet count and empty state */
+#sheetCount {
+    margin-top: 16px;
+    color: #777184;
+    font-size: 13px;
+}
+
+#noSheets {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 25px;
+    text-align: center;
+    color: #777184;
+    background: #fff5f8;
+    border-radius: 12px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    #sheetGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #sheetGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    #sheetGrid .sheet-art {
+        min-height: 120px;
+        font-size: 50px;
+    }
+
+    #sheetGrid .sheet-card-content {
+        padding: 17px;
+    }
+
+    #sheetGrid .sheet-actions {
+        gap: 8px;
+    }
+
+    #sheetGrid .sheet-action {
+        min-height: 44px;
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -221,8 +406,10 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
       <article class="sheet-card" data-category="Seasonal"data-class="lkg><div class="sheet-art" aria-hidden="true">🎉</div><div class="sheet-card-content"><span class="sheet-category">Seasonal</span><h3>Festivals & Seasons</h3><p>Creative colouring and activity pages for special days and seasons.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/festivals-seasons.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/festivals-seasons.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
       <article class="sheet-card" data-category="Activity"data-class="lkg><div class="sheet-art" aria-hidden="true">🎨</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Creative Doodle & Draw</h3><p>Open-ended drawing prompts for imagination and creativity.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/doodle-draw-sheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/doodle-draw-sheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-
-      <p class="no-sheets" id="noSheets">No worksheets found. Try another search or category.</p>
+<p class="no-sheets" id="noSheets" style="display:none;">
+    No worksheets found. Try another search or category.
+</p>
+      
     </div>
   </div>
 </section>
