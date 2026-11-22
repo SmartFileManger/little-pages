@@ -342,20 +342,31 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
 <div class="products" id="products"></div>
 </div></section>
 <div class="wrap"><div class="banner" id="about"><div><div class="eyebrow">A happy little reading corner</div><h2>Make room for imagination.</h2><p>Fun, thoughtful printables for creative days at home.</p></div><div class="big">🌼📚</div></div></div>
+
 <section id="download-sheets">
   <div class="wrap">
+
     <div class="section-head">
       <div>
-        <div class="eyebrow">Print, play & learn</div>
+        <div class="eyebrow">PRINT, PLAY & LEARN</div>
         <h2>Free Download Sheets</h2>
-        <p>Choose a printable, download it or open it to print at home.</p>
+        <p>Explore fun worksheets. Download or print your favourites at home.</p>
       </div>
     </div>
 
+    <!-- Worksheet Filters -->
     <div class="sheet-toolbar">
-      <input class="search" type="search" id="sheetSearch" placeholder="🔎  Search worksheets..." aria-label="Search worksheets">
-      <select class="filter" id="sheetCategory" aria-label="Filter worksheets by category">
-        <option value="All">All categories</option>
+
+      <input
+        class="search"
+        type="search"
+        id="sheetSearch"
+        placeholder="🔎 Search worksheets..."
+        aria-label="Search worksheets">
+
+      <select class="filter" id="sheetCategory"
+              aria-label="Filter by category">
+        <option value="All">All Categories</option>
         <option value="Learning">Learning</option>
         <option value="Colouring">Colouring</option>
         <option value="Activity">Activity</option>
@@ -366,53 +377,194 @@ footer{background:#393346;color:#fff;padding:38px 0;margin-top:25px}.foot{displa
         <option value="Puzzles">Puzzles & Games</option>
         <option value="Preschool">Preschool</option>
         <option value="Seasonal">Seasonal & Festivals</option>
+      </select>
 
+      <select class="filter" id="classFilter"
+              aria-label="Filter by class">
+        <option value="all">All Classes</option>
+        <option value="nursery">Nursery</option>
+        <option value="lkg">LKG</option>
+        <option value="ukg">UKG</option>
+        <option value="class1">Class 1</option>
+        <option value="class2">Class 2</option>
+        <option value="class3">Class 3</option>
+        <option value="class4">Class 4</option>
+        <option value="class5">Class 5</option>
       </select>
-                <select id="classFilter">
-    <option value="all">All Classes</option>
-    <option value="nursery">Nursery</option>
-    <option value="lkg">LKG</option>
-    <option value="ukg">UKG</option>
-    <option value="class1">Class 1</option>
-    <option value="class2">Class 2</option>
-    <option value="class3">Class 3</option>
-    <option value="class4">Class 4</option>
-    <option value="class5">Class 5</option>
-      </select>
+
     </div>
-    <p class="sheet-count" id="sheetCount" aria-live="polite">Showing all worksheets</p>
 
+    <p class="sheet-count" id="sheetCount" aria-live="polite">
+      Showing all worksheets
+    </p>
+
+    <!-- Worksheet Cards -->
     <div class="sheet-grid" id="sheetGrid">
-      <article class="sheet-card" data-category="Learning"data-class="lkg><div class="sheet-art" aria-hidden="true">🔤</div><div class="sheet-card-content"><span class="sheet-category">Learning</span><h3>Alphabet Worksheets</h3><p>Learn and practise letters from A to Z with fun activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/alphabet-worksheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/alphabet-worksheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <article class="sheet-card" data-category="Learning"data-class="lkg><div class="sheet-art" aria-hidden="true">🔢</div><div class="sheet-card-content"><span class="sheet-category">Learning</span><h3>Number Practice</h3><p>Build number skills with counting, number recognition and tracing.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/number-practice.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/number-practice.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Learning" data-class="lkg">
+        <div class="sheet-art">🔤</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Learning</span>
+          <h3>Alphabet Worksheets</h3>
+          <p>Learn and practise letters from A to Z with fun activities.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/alphabet-worksheets.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/alphabet-worksheets.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Colouring"data-class="lkg><div class="sheet-art" aria-hidden="true">🐼</div><div class="sheet-card-content"><span class="sheet-category">Colouring</span><h3>Animal Coloring</h3><p>Bring friendly animal pictures to life with colour.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/animal-coloring.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/animal-coloring.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Learning" data-class="lkg">
+        <div class="sheet-art">🔢</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Learning</span>
+          <h3>Number Practice</h3>
+          <p>Build number skills with counting, number recognition and tracing.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/number-practice.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/number-practice.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Activity"data-class="lkg><div class="sheet-art" aria-hidden="true">🧩</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Fun Activities</h3><p>Enjoy playful puzzles, games and brain-teasing activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/fun-activities.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/fun-activities.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Colouring" data-class="nursery">
+        <div class="sheet-art">🐼</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Colouring</span>
+          <h3>Animal Coloring</h3>
+          <p>Bring friendly animal pictures to life with colour.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/animal-coloring.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/animal-coloring.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Writing"data-class="lkg><div class="sheet-art" aria-hidden="true">✍️</div><div class="sheet-card-content"><span class="sheet-category">Writing</span><h3>Handwriting & Tracing</h3><p>Practise pencil control, letter formation and early writing.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/handwriting-tracing.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/handwriting-tracing.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Activity" data-class="lkg">
+        <div class="sheet-art">🧩</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Activity</span>
+          <h3>Fun Activities</h3>
+          <p>Enjoy playful puzzles, games and brain-teasing activities.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/fun-activities.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/fun-activities.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Maths"data-class="lkg><div class="sheet-art" aria-hidden="true">➕</div><div class="sheet-card-content"><span class="sheet-category">Maths</span><h3>Maths Practice</h3><p>Try simple addition, subtraction and number activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/maths-practice.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/maths-practice.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Writing" data-class="ukg">
+        <div class="sheet-art">✍️</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Writing</span>
+          <h3>Handwriting & Tracing</h3>
+          <p>Practise pencil control, letter formation and early writing.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/handwriting-tracing.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/handwriting-tracing.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Science & Nature"data-class="lkg><div class="sheet-art" aria-hidden="true">🌱</div><div class="sheet-card-content"><span class="sheet-category">Science & Nature</span><h3>Nature Explorer</h3><p>Discover plants, animals, weather and the world around us.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/nature-explorer.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/nature-explorer.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Maths" data-class="class1">
+        <div class="sheet-art">➕</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Maths</span>
+          <h3>Maths Practice</h3>
+          <p>Try simple addition, subtraction and number activities.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/maths-practice.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/maths-practice.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Puzzles"data-class="lkg><div class="sheet-art" aria-hidden="true">🧠</div><div class="sheet-card-content"><span class="sheet-category">Puzzles</span><h3>Puzzles & Brain Games</h3><p>Have fun with mazes, matching, patterns and spot-the-difference.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/puzzles-brain-games.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/puzzles-brain-games.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Science & Nature" data-class="class2">
+        <div class="sheet-art">🌱</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Science & Nature</span>
+          <h3>Nature Explorer</h3>
+          <p>Discover plants, animals, weather and the world around us.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/nature-explorer.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/nature-explorer.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Preschool"data-class="lkg><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Gentle first activities for shapes, colours, letters and numbers.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/preschool-starter-pack.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/preschool-starter-pack.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Puzzles" data-class="class3">
+        <div class="sheet-art">🧠</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Puzzles</span>
+          <h3>Puzzles & Brain Games</h3>
+          <p>Have fun with mazes, matching, patterns and spot-the-difference.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/puzzles-brain-games.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/puzzles-brain-games.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Story"data-class="lkg><div class="sheet-art" aria-hidden="true">📖</div><div class="sheet-card-content"><span class="sheet-category">Story</span><h3>Story Time Activities</h3><p>Put story events in order and enjoy simple reading prompts.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/story-time-activities.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/story-time-activities.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Preschool" data-class="nursery">
+        <div class="sheet-art">🧸</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Preschool</span>
+          <h3>Preschool Starter Pack</h3>
+          <p>Gentle first activities for shapes, colours, letters and numbers.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/preschool-starter-pack.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/preschool-starter-pack.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Seasonal"data-class="lkg><div class="sheet-art" aria-hidden="true">🎉</div><div class="sheet-card-content"><span class="sheet-category">Seasonal</span><h3>Festivals & Seasons</h3><p>Creative colouring and activity pages for special days and seasons.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/festivals-seasons.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/festivals-seasons.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Story" data-class="class1">
+        <div class="sheet-art">📖</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Story</span>
+          <h3>Story Time Activities</h3>
+          <p>Put story events in order and enjoy simple reading prompts.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/story-time-activities.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/story-time-activities.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="sheet-card" data-category="Activity"data-class="lkg><div class="sheet-art" aria-hidden="true">🎨</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Creative Doodle & Draw</h3><p>Open-ended drawing prompts for imagination and creativity.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/doodle-draw-sheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/doodle-draw-sheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-<p class="no-sheets" id="noSheets" style="display:none;">
-    No worksheets found. Try another search or category.
-</p>
-      
+      <article class="sheet-card" data-category="Seasonal" data-class="class2">
+        <div class="sheet-art">🎉</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Seasonal</span>
+          <h3>Festivals & Seasons</h3>
+          <p>Creative colouring and activity pages for special days and seasons.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/festivals-seasons.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/festivals-seasons.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sheet-card" data-category="Activity" data-class="class3">
+        <div class="sheet-art">🎨</div>
+        <div class="sheet-card-content">
+          <span class="sheet-category">Activity</span>
+          <h3>Creative Doodle & Draw</h3>
+          <p>Open-ended drawing prompts for imagination and creativity.</p>
+          <div class="sheet-actions">
+            <a class="sheet-action download-btn" href="sheets/doodle-draw-sheets.pdf" download>⬇ Download PDF</a>
+            <a class="sheet-action print-btn" href="sheets/doodle-draw-sheets.pdf" target="_blank" rel="noopener">🖨 Print</a>
+          </div>
+        </div>
+      </article>
+
+      <p class="no-sheets" id="noSheets" style="display:none;">
+        No worksheets found. Try another search or category.
+      </p>
+
     </div>
   </div>
 </section>
+
 </main>
 
 <footer><div class="wrap foot"><div><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Digital books for curious kids.</p></div><div class="footlinks"><a href="#books">Shop</a><a href="#categories">Categories</a><a href="mailto:hello@example.com">Contact</a></div><p>© 2026 Little Pages. All rights reserved.</p></div></footer>
