@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Discover printable colouring books, activity books, storybooks and free learning worksheets for curious little minds at Little Pages.">
 <meta name="theme-color" content="#fce5ec">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://smartfilemanger.github.io/little-pages/">
+<meta name="color-scheme" content="light">
 <meta property="og:title" content="Little Pages — Books for Big Imaginations">
 <meta property="og:description" content="Printable books, creative activities and free worksheets for little learners.">
 <meta property="og:type" content="website">
-<title>Little Pages — Books for Big Imaginations</title>
+<title>Little Pages | Printable Books, Colouring & Free Worksheets for Kids</title>
 <style>
 :root{--ink:#353044;--muted:#777184;--pink:#f6c5d5;--rose:#d96f98;--cream:#fffaf4;--lav:#e9e2fb;--mint:#dff1e7;--yellow:#ffedb8;--line:#eee8e8}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Nunito,"Trebuchet MS",Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0}.wrap{width:min(1160px,92%);margin:auto}
@@ -110,6 +113,33 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 @media(max-width:600px){.hero{padding:38px 0 28px}.hero-grid{min-height:0;gap:12px}.hero-art{min-height:175px}.book-stack{font-size:72px;padding:20px 30px}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-actions a{padding:12px 10px;text-align:center;font-size:13px}.trust{gap:8px;justify-content:flex-start}.trust span{font-size:11px;padding:8px 10px}.age-grid{grid-template-columns:repeat(2,1fr)}.age-card{min-height:78px}.feature-note,.feature-side{padding:20px}.value-grid{grid-template-columns:1fr 1fr;gap:9px}.value-card{padding:15px}.sheet-toolbar{grid-template-columns:1fr}.sheet-toolbar .search{grid-column:auto}.footer-columns{width:100%;grid-template-columns:1fr 1fr}.footer-bottom{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
+
+/* 2.1 usability fixes */
+[hidden]{display:none!important}
+.sheet-reset{min-height:44px;white-space:nowrap}
+#bookCount{margin:-10px 0 18px}
+.product .tag{letter-spacing:.35px}
+.product .info{display:flex;flex-direction:column}
+.product .price-row{margin-top:auto}
+#digital-info{background:#fffaf6}
+.footer-col a:hover{color:#f6c5d5;text-decoration:underline}
+@media(max-width:900px){.sheet-toolbar{grid-template-columns:1fr 1fr}.sheet-reset{grid-column:1/-1}}
+@media(max-width:600px){.sheet-reset{width:100%}}
+
+
+/* Legal policy pages */
+.policy-section{padding:54px 0;background:#fffaf6;scroll-margin-top:88px}
+.policy-wrap{max-width:900px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,42px);box-shadow:0 8px 26px #43304c0a}
+.policy-wrap h2{font-size:clamp(27px,4vw,36px);margin:8px 0 8px;letter-spacing:-1px}
+.policy-wrap h3{font-size:18px;margin:26px 0 8px;color:var(--ink)}
+.policy-wrap p,.policy-wrap li{font-size:14px;line-height:1.75;color:#6c6575}
+.policy-wrap ul{padding-left:22px}
+.policy-updated{font-size:12px!important;color:#948b98!important;margin:0 0 22px}
+.policy-note{background:#fff4e8;border:1px solid #f2dfc8;border-radius:14px;padding:14px 16px;margin:18px 0}
+.policy-note p{margin:0}
+.policy-wrap a{color:#a9436d;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.policy-section{padding:32px 0}.policy-wrap{border-radius:16px}.policy-wrap h3{margin-top:22px}}
+
 </style>
 </head>
 <body>
@@ -145,7 +175,8 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 <div class="wrap feature-strip"><div class="feature-note"><span class="section-kicker">Made for little learners</span><h2>Small pages. Big possibilities.</h2><p>Explore creative printables for quiet afternoons, curious questions and happy learning moments.</p></div><a class="feature-side" href="#download-sheets"><div><strong>Start with something free</strong><p class="notice">Browse printable worksheets</p></div><span aria-hidden="true">🎨</span></a></div>
 <section id="books"><div class="wrap">
 <div class="section-head"><div><div class="eyebrow">Made with a little magic</div><h2>Our lovely little library</h2><p>Choose a book, download, print and let the fun begin.</p></div></div>
-<div class="toolbar"><input class="search" id="search" placeholder="🔎  Search books..." oninput="render()"><select class="filter" id="filter" onchange="render()"><option value="All">All books</option><option>Colouring</option><option>Activity</option><option>Story</option><option>Learning</option></select></div>
+<div class="toolbar"><input class="search" id="search" type="search" aria-label="Search books" placeholder="🔎  Search books..." oninput="render()"><select class="filter" id="filter" aria-label="Filter books by category" onchange="render()"><option value="All">All books</option><option>Colouring</option><option>Activity</option><option>Story</option><option>Learning</option></select></div>
+<p class="sheet-count" id="bookCount" aria-live="polite"></p>
 <div class="products" id="products"></div>
 </div></section>
 <div class="wrap"><div class="banner" id="about"><div><div class="eyebrow">A happy little reading corner</div><h2>Make room for imagination.</h2><p>Fun, thoughtful printables for creative days at home.</p></div><div class="big">🌼📚</div></div></div>
@@ -178,8 +209,9 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
         <option value="All">All ages & classes</option>
         <option value="Preschool">Preschool</option><option value="Nursery">Nursery</option><option value="LKG">LKG</option><option value="UKG">UKG</option><option value="Class 1">Class 1</option><option value="Class 2">Class 2</option>
       </select>
+      <button class="outline sheet-reset" type="button" onclick="resetSheetFilters()">Clear filters</button>
     </div>
-    <p class="sheet-count" id="sheetCount" aria-live="polite">Showing all worksheets</p>
+    <p class="sheet-count" id="sheetCount" aria-live="polite">Loading worksheets…</p>
 
     <div class="sheet-grid" id="sheetGrid">
       <article class="sheet-card" data-category="Learning" data-level="Nursery,LKG,UKG,Class 1"><div class="sheet-art" aria-hidden="true">🔤</div><div class="sheet-card-content"><span class="sheet-category">Learning</span><h3>Alphabet Worksheets</h3><p>Learn and practise letters from A to Z with fun activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/alphabet-worksheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/alphabet-worksheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
@@ -206,15 +238,96 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 
       <article class="sheet-card" data-category="Activity" data-level="Preschool,Nursery,LKG,UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🎨</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Creative Doodle & Draw</h3><p>Open-ended drawing prompts for imagination and creativity.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/doodle-draw-sheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/doodle-draw-sheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <p class="no-sheets" id="noSheets">No worksheets found. Try another search or category.</p>
+      <p class="no-sheets" id="noSheets" role="status" hidden>No worksheets match these filters. Try a different search or clear the filters.</p>
     </div>
   </div>
 </section>
 </main>
 
 <section class="value-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">A little more to love</div><h2>Why families choose Little Pages</h2><p>Simple, joyful resources to make creative time easier.</p></div></div><div class="value-grid"><div class="value-card"><span class="value-icon">📥</span><b>Easy downloads</b><p>Get your printable files and keep them ready for activity time.</p></div><div class="value-card"><span class="value-icon">🖨️</span><b>Print at home</b><p>Choose the pages you need and print whenever it suits you.</p></div><div class="value-card"><span class="value-icon">🧩</span><b>Learn through play</b><p>Creative activities encourage curiosity and practice.</p></div><div class="value-card"><span class="value-icon">💗</span><b>Made for little minds</b><p>Friendly themes and approachable activities for young learners.</p></div></div></div></section>
-<section><div class="wrap faq"><div class="section-head"><div><div class="eyebrow">Need a little help?</div><h2>Frequently asked questions</h2></div></div><details><summary>How do I download a free worksheet?</summary><p>Choose a worksheet and select Download PDF. The file will open or download depending on your browser settings.</p></details><details><summary>Can I print the worksheets more than once?</summary><p>Yes, you can print your downloaded worksheet for personal and family learning use. Please do not resell or redistribute the files.</p></details><details><summary>Are purchases and checkout available?</summary><p>The shop currently displays product information and a demo cart. Online payment and secure paid-file delivery are not yet connected, so please do not treat the cart as a completed purchase.</p></details></div></section>
-<footer><div class="wrap foot"><div class="footer-brand"><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Printable fun for curious kids.</p></div><div class="footer-columns"><div class="footer-col"><strong>Explore</strong><a href="#books">Shop books</a><a href="#categories">Categories</a><a href="#download-sheets">Free worksheets</a><a href="#age-title">Browse by class</a></div><div class="footer-col"><strong>Help</strong><a href="#about">About Little Pages</a><a href="#">Contact details coming soon</a><a href="#">Privacy policy (to be added)</a><a href="#">Terms (to be added)</a></div></div><div class="footer-bottom"><p>© 2026 Little Pages. All rights reserved.</p><p>Little books, big imaginations. 💗</p></div></div></footer>
+<section id="digital-info"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Before you download</div><h2>Digital product information</h2><p>A few helpful details about Little Pages printables.</p></div></div><div class="value-grid"><div class="value-card"><span class="value-icon">📄</span><b>PDF format</b><p>Printable resources are provided as PDF files where a PDF is available.</p></div><div class="value-card"><span class="value-icon">🏡</span><b>Personal use</b><p>Downloads are intended for personal and family learning use. Do not resell or redistribute files.</p></div><div class="value-card"><span class="value-icon">🖨️</span><b>Print at home</b><p>Use your browser's print option or a PDF reader to print downloaded pages.</p></div><div class="value-card"><span class="value-icon">ℹ️</span><b>Availability</b><p>Only products with a working download file should be considered available. Paid checkout is not enabled yet.</p></div></div></div></section>
+<section id="faq"><div class="wrap faq"><div class="section-head"><div><div class="eyebrow">Need a little help?</div><h2>Frequently asked questions</h2></div></div><details><summary>How do I download a free worksheet?</summary><p>Choose a worksheet and select Download PDF. The file will open or download depending on your browser settings.</p></details><details><summary>Can I print the worksheets more than once?</summary><p>Yes, you can print your downloaded worksheet for personal and family learning use. Please do not resell or redistribute the files.</p></details><details><summary>Are purchases and checkout available?</summary><p>The shop currently displays product information and a demo cart. Online payment and secure paid-file delivery are not connected yet. The cart is a preview only and cannot accept payment.</p></details></div></section>
+
+<section class="policy-section" id="privacy-policy" aria-labelledby="privacy-title">
+  <div class="wrap"><article class="policy-wrap">
+    <div class="eyebrow">Your information matters</div>
+    <h2 id="privacy-title">Privacy Policy</h2>
+    <p class="policy-updated">Last updated: 24 November 2026</p>
+    <p>This Privacy Policy explains how Little Pages ("we", "us" or "our") handles information when you visit <strong>smartfilemanger.github.io/little-pages/</strong>, use an account, or access our printable learning resources. Please read it with the Terms &amp; Conditions below.</p>
+    <div class="policy-note"><p><strong>For parents and guardians:</strong> Little Pages is designed for families and children's learning. Accounts should be created and managed by an adult parent or guardian. Please do not submit a child's full name, personal email, phone number, photograph, school, precise location or other identifying information through the website.</p></div>
+    <h3>1. Information we may process</h3>
+    <ul>
+      <li><strong>Account information:</strong> If you choose to sign in, we use the email address you provide to request and verify a one-time login code. Our authentication provider may create and maintain account identifiers and authentication records.</li>
+      <li><strong>Session information:</strong> Authentication tokens or session data may be stored in your browser so that sign-in can continue between page visits. You can sign out and clear your browser site data to remove locally stored session information.</li>
+      <li><strong>Technical information:</strong> The website host, content delivery services and your browser may process routine technical data such as IP address, device/browser details, request time and pages or files requested in server or security logs.</li>
+      <li><strong>Messages:</strong> If you contact us, we will process the details and contents you choose to send so that we can respond.</li>
+    </ul>
+    <p>We do not intentionally ask for payment-card details on this website. The current cart is a demonstration and does not process payments. We do not currently describe or operate a behavioural advertising or analytics programme through this page.</p>
+    <h3>2. Why we use information</h3>
+    <p>Information is used only as reasonably necessary to provide and secure the website, authenticate adult users, make requested resources available, respond to enquiries, prevent misuse, troubleshoot technical problems and meet applicable legal obligations.</p>
+    <h3>3. Service providers and sharing</h3>
+    <p>Little Pages is hosted using GitHub Pages. Email authentication is integrated with Supabase. The website also loads the Supabase client library from jsDelivr. These providers may process technical or account information as needed to deliver their services and under their own terms and privacy documentation. We do not sell personal information. We may disclose information where required by law or where reasonably necessary to protect the website, its users or our rights.</p>
+    <h3>4. Cookies and browser storage</h3>
+    <p>The site may use browser storage required for the sign-in session and basic website operation. The hosting or service providers may use their own technical mechanisms. You can manage cookies and site storage through your browser settings; clearing them may sign you out or affect site functionality.</p>
+    <h3>5. Children's privacy</h3>
+    <p>Parents, guardians and educators should supervise children's use of the website. Children should not create accounts or send personal information themselves. If you believe a child has provided personal information to us, contact us using the address below so we can review the request and take appropriate steps, subject to applicable law.</p>
+    <h3>6. Retention and security</h3>
+    <p>We and our service providers retain information only for as long as reasonably needed for the purposes described above, security, dispute handling and legal requirements. We use service providers and reasonable technical measures, but no website or internet transmission can be guaranteed completely secure.</p>
+    <h3>7. Your choices and requests</h3>
+    <p>You may choose not to create an account and can still browse public pages and available free resources. You can sign out and clear browser site data. Depending on the law that applies to you, you may also have rights to request access, correction, deletion or other handling of personal information. We may need to verify your identity before acting on a request.</p>
+    <h3>8. External websites</h3>
+    <p>Links to third-party websites or services are provided for convenience. Their privacy practices are controlled by those providers, not by Little Pages. Review their policies before sharing information with them.</p>
+    <h3>9. Changes to this policy</h3>
+    <p>We may update this policy when the website or applicable requirements change. The revised version will be posted here with a new "Last updated" date. Please review it periodically.</p>
+    <h3>10. Contact</h3>
+    <p>For privacy questions or requests, contact: <strong>[ADD YOUR SUPPORT EMAIL BEFORE PUBLISHING]</strong>. Please replace this placeholder with an email address monitored by the website operator before making this policy live.</p>
+  </article></div>
+</section>
+
+
+<section class="policy-section" id="terms-conditions" aria-labelledby="terms-title">
+  <div class="wrap"><article class="policy-wrap">
+    <div class="eyebrow">A few friendly ground rules</div>
+    <h2 id="terms-title">Terms &amp; Conditions</h2>
+    <p class="policy-updated">Last updated: 24 November 2026</p>
+    <p>These Terms &amp; Conditions apply to your use of the Little Pages website at <strong>smartfilemanger.github.io/little-pages/</strong> and its books, worksheets and other downloadable resources. By using the website, you agree to these terms. If you do not agree, please do not use the website.</p>
+    <div class="policy-note"><p><strong>Parents and guardians:</strong> Please supervise children's use of this website and make sure downloads and printed activities are age-appropriate. Any account should be managed by an adult.</p></div>
+    <h3>1. About the website</h3>
+    <p>Little Pages provides information about printable books, creative activities and learning worksheets. Resources may be offered free of charge or, when a working sales process is introduced, for a stated price. Product descriptions, previews and availability may change.</p>
+    <h3>2. Personal-use licence</h3>
+    <p>Unless a product page expressly says otherwise, when a resource is made available to you, Little Pages grants you a limited, non-exclusive, non-transferable licence to download and use it for your personal, non-commercial use and for learning activities within your own household.</p>
+    <ul>
+      <li>You may print reasonable copies for personal or household learning use.</li>
+      <li>You may not sell, sublicense, share, upload, publish, distribute or otherwise make the files available to others.</li>
+      <li>You may not remove copyright notices, claim the work as your own, or use the resources to create products for sale.</li>
+      <li>You may not use automated methods to scrape, copy or systematically download website content.</li>
+    </ul>
+    <h3>3. Intellectual property</h3>
+    <p>Unless stated otherwise, the website design, text, artwork, illustrations, book layouts, worksheets, logos and other materials are owned by or licensed to Little Pages and are protected by applicable intellectual-property laws. These terms do not transfer ownership to you. All rights not expressly granted are reserved.</p>
+    <h3>4. Downloads and availability</h3>
+    <p>Digital files require a compatible device, PDF reader and internet connection. We do not guarantee uninterrupted access or that every file will be available at all times. You are responsible for checking that a resource is suitable for your needs and for keeping your own backup after downloading.</p>
+    <h3>5. Prices, orders and payments</h3>
+    <p><strong>The current website cart is a demonstration only.</strong> It does not accept payment, confirm an order or provide secure delivery of paid files. Do not treat adding an item to the cart as a purchase. If paid checkout is introduced, the price, taxes (if applicable), payment provider, delivery method and applicable sale terms will be shown before you place an order.</p>
+    <h3>6. Refunds and cancellations</h3>
+    <p>Because the current website does not process payments, no purchase or refund can currently be completed through its demo cart. If paid digital products are introduced, a clear refund and cancellation policy will be displayed before checkout. Nothing in these terms limits consumer rights that cannot legally be excluded under applicable law.</p>
+    <h3>7. Acceptable use</h3>
+    <p>You agree not to misuse the website, interfere with its operation or security, attempt unauthorised access, introduce malicious code, infringe another person's rights, or use the website for unlawful purposes.</p>
+    <h3>8. Educational information and supervision</h3>
+    <p>Our resources are provided for general educational and creative activities. They are not a substitute for professional teaching, assessment, medical, therapeutic or other professional advice. Parents and guardians are responsible for supervising children and selecting suitable activities and materials.</p>
+    <h3>9. Third-party services and links</h3>
+    <p>The website may rely on third-party hosting, authentication, content delivery or external links. Those services are provided by their respective operators and may be subject to separate terms. We are not responsible for the content or availability of independent third-party websites.</p>
+    <h3>10. Disclaimers and liability</h3>
+    <p>We aim to keep descriptions and resources accurate, but the website and its content are provided on an "as available" basis. To the extent permitted by applicable law, we do not warrant uninterrupted or error-free operation. Nothing in these terms excludes or limits liability where doing so would be unlawful, including mandatory consumer rights or liability that cannot legally be excluded.</p>
+    <h3>11. Changes to the website or terms</h3>
+    <p>We may update, suspend or discontinue website features and may revise these terms. Changes will be posted on this page with an updated date. Continued use after a change takes effect indicates acceptance of the revised terms, to the extent permitted by law.</p>
+    <h3>12. Governing law</h3>
+    <p>These terms are subject to the laws that apply to the website operator and the transaction. Any mandatory consumer protections applicable to you remain unaffected. The operator should add its full legal name, business address and appropriate dispute-resolution details here before launching paid sales.</p>
+    <h3>13. Contact</h3>
+    <p>For questions about these terms, contact: <strong>[ADD YOUR SUPPORT EMAIL BEFORE PUBLISHING]</strong>. Replace this placeholder with a monitored support email before publishing.</p>
+  </article></div>
+</section>
+
+<footer><div class="wrap foot"><div class="footer-brand"><div class="brand">little<span style="color:#f6c5d5">pages</span></div><p>Little books, big imaginations.<br>Printable fun for curious kids.</p></div><div class="footer-columns"><div class="footer-col"><strong>Explore</strong><a href="#books">Shop books</a><a href="#categories">Categories</a><a href="#download-sheets">Free worksheets</a><a href="#age-title">Browse by class</a></div><div class="footer-col"><strong>Help</strong><a href="#about">About Little Pages</a><a href="#faq">Download help & FAQs</a><a href="#download-sheets">Free resources</a><a href="#digital-info">Digital product information</a><a href="#privacy-policy">Privacy Policy</a><a href="#terms-conditions">Terms &amp; Conditions</a></div></div><div class="footer-bottom"><p>© <span id="copyrightYear">2026</span> Little Pages. All rights reserved.</p><p>Little books, big imaginations. 💗</p></div></div></footer>
 <div class="modal-bg" id="authModal" onclick="if(event.target===this)closeAuth()"><div class="modal">
 <button class="close" onclick="closeAuth()">✕</button>
 <div id="authStepEmail"><div class="eyebrow">Welcome to Little Pages</div><h3>Login or create your account ✨</h3><p>Enter your email and we'll send you a one-time verification code.</p><label for="authEmail" class="notice">Email address</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" style="width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin:8px 0 12px;font:inherit"><button class="primary" style="width:100%;border:0" onclick="sendEmailOtp()">Send 6-digit code</button><p id="authMessage" class="notice" aria-live="polite"></p></div>
@@ -289,7 +402,13 @@ const books=[
 {id:8,title:"Amazing Nature for Kids",cat:"Learning",desc:"Explore plants, bugs and the natural world.",price:129,emoji:"🌿",cover:"c8",tag:"",access:"paid",pdf:"pdfs/amazing-nature-for-kids.pdf"}
 ];
 let cart=[];
-function render(){const q=document.getElementById('search').value.toLowerCase(),f=document.getElementById('filter').value;const list=books.filter(b=>(f==='All'||b.cat===f)&&(b.title.toLowerCase().includes(q)||b.desc.toLowerCase().includes(q)));document.getElementById('products').innerHTML=list.map(b=>`<article class="product"><div class="cover ${b.cover}"><span class="tag">${b.tag||b.cat.toUpperCase()}</span><span class="emoji">${b.emoji}</span></div><div class="info"><h3>${b.title}</h3><p>${b.desc}</p><div class="product-meta"><span>${b.cat}</span><span>${b.access==="free"?"Free printable":"Digital book"}</span></div><div class="price-row"><span class="price">${b.access==="free"?"Free":"₹"+b.price}</span><button class="add" onclick="${b.access==="free"?"downloadFree("+b.id+")":"addCart("+b.id+")"}">${b.access==="free"?"⬇ Download":"＋ Add"}</button></div><button class="preview-btn" style="margin-top:10px" onclick="preview(${b.id})">View details & preview</button></div></article>`).join('')||'<p>No books found. Try another search.</p>'}
+function render(){
+ const q=document.getElementById('search').value.trim().toLowerCase();
+ const f=document.getElementById('filter').value;
+ const list=books.filter(b=>(f==='All'||b.cat===f)&&(b.title.toLowerCase().includes(q)||b.desc.toLowerCase().includes(q)||b.cat.toLowerCase().includes(q)));
+ document.getElementById('bookCount').textContent=`Showing ${list.length} of ${books.length} books`;
+ document.getElementById('products').innerHTML=list.map(b=>`<article class="product"><div class="cover ${b.cover}"><span class="tag">${b.tag||b.cat.toUpperCase()}</span><span class="emoji">${b.emoji}</span></div><div class="info"><h3>${b.title}</h3><p>${b.desc}</p><div class="product-meta"><span>${b.cat}</span><span>${b.access==='free'?'Free printable':'Digital book'}</span><span>PDF</span></div><div class="price-row"><span class="price">${b.access==='free'?'Free':'₹'+b.price}</span><button class="add" onclick="${b.access==='free'?'downloadFree('+b.id+')':'addCart('+b.id+')'}">${b.access==='free'?'⬇ Download':'＋ Add'}</button></div><button class="preview-btn" style="margin-top:10px" onclick="preview(${b.id})">View details & preview</button></div></article>`).join('')||'<p class="no-sheets" style="display:block">No books match your search. Try another keyword or category.</p>';
+}
 function choose(c){document.getElementById('filter').value=c;setTimeout(render,0)}
 function addCart(id){const b=books.find(x=>x.id===id);cart.push(b);document.getElementById('cartCount').textContent=cart.length}
 function showCart(){document.getElementById('modalBody').innerHTML=`<h3>Your shopping cart 🛍</h3>${cart.length?`<ul class="cart-list">${cart.map(b=>`<li>${b.title} — ₹${b.price}</li>`).join('')}</ul><h3>Total: ₹${cart.reduce((s,b)=>s+b.price,0)}</h3><button class="primary" onclick="checkout()">Continue</button><button class="outline" style="margin-left:8px" onclick="cart=[];document.getElementById('cartCount').textContent='0';showCart()">Clear cart</button>`:'<p>Your cart is waiting for a lovely book!</p>'}<p class="notice">Local demo only: payment processing is not connected. Free books download directly; paid books must be delivered securely after a real payment integration before going online.</p>`;document.getElementById('modal').style.display='flex'}
@@ -297,7 +416,7 @@ function preview(id) {
   const b = books.find(x => x.id === id);
   const previewContent = b.access === "free"
     ? `<iframe src="${b.pdf}#toolbar=0" title="${b.title} PDF preview" width="100%" height="420" loading="lazy" style="border:1px solid #eee;border-radius:12px"></iframe><a class="primary" href="${b.pdf}" download>⬇ Download free PDF</a>`
-    : `<div style="background:linear-gradient(135deg,#fbe0e9,#e8e1fa);border-radius:16px;padding:36px 18px;text-align:center;margin:16px 0"><div style="font-size:64px">${b.emoji}</div><strong>${b.title}</strong><p class="notice">A printable digital book from Little Pages.</p></div><p class="notice">Paid PDF previews and secure purchases will be enabled after checkout and file-delivery integration is complete.</p><button class="primary" onclick="addCart(${b.id});closeModal()">Add to demo cart — ₹${b.price}</button>`;
+    : `<div style="background:linear-gradient(135deg,#fbe0e9,#e8e1fa);border-radius:16px;padding:36px 18px;text-align:center;margin:16px 0"><div style="font-size:64px">${b.emoji}</div><strong>${b.title}</strong><p class="notice">A printable digital book from Little Pages. File format: PDF.</p></div><p class="notice">Paid PDF previews and secure purchases will be enabled after checkout and file-delivery integration is complete.</p><button class="primary" onclick="addCart(${b.id});closeModal()">Add to demo cart — ₹${b.price}</button>`;
   document.getElementById('modalBody').innerHTML = `<h3>${b.title}</h3><p>${b.desc}</p>${previewContent}`;
   document.getElementById('modal').style.display = 'flex';
 }
@@ -355,7 +474,7 @@ function renderSheets() {
     if (visible) visibleCount++;
   });
 
-  noSheets.style.display = visibleCount === 0 ? 'block' : 'none';
+  noSheets.hidden = visibleCount !== 0;
   document.getElementById('sheetCount').textContent = `Showing ${visibleCount} of ${sheetCards.length} worksheets${level !== 'All' ? ` for ${level}` : ''}`;
 }
 
@@ -363,7 +482,9 @@ sheetSearch.addEventListener('input', renderSheets);
 sheetCategory.addEventListener('change', renderSheets);
 sheetLevel.addEventListener('change', renderSheets);
 function chooseSheetLevel(level){sheetLevel.value=level;renderSheets();}
+function resetSheetFilters(){sheetSearch.value='';sheetCategory.value='All';sheetLevel.value='All';renderSheets();}
 
+document.getElementById('copyrightYear').textContent=new Date().getFullYear();
 render();
 renderSheets();
 </script>
