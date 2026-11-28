@@ -114,6 +114,26 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 
+
+/* 2.4 worksheet sidebar and aligned filter toolbar */
+.sheet-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;align-items:start}
+.sheet-sidebar{position:sticky;top:96px;background:linear-gradient(160deg,#fbe8ef,#f4efff);border:1px solid #f0dce5;border-radius:20px;padding:20px;text-align:left}
+.sheet-sidebar-kicker{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:900;color:#a9436d}
+.sheet-sidebar h3{font-size:19px;line-height:1.25;margin:8px 0;color:var(--ink)}
+.sheet-sidebar p{font-size:12px;line-height:1.55;color:var(--muted);margin:0 0 15px}
+.sheet-level-list{display:grid;gap:7px}
+.sheet-level-btn{display:flex;align-items:center;gap:9px;width:100%;padding:10px 11px;border:1px solid #eadde5;border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:12px;font-weight:800;text-align:left;cursor:pointer;transition:.2s}
+.sheet-level-btn:hover,.sheet-level-btn.is-active{background:var(--ink);border-color:var(--ink);color:#fff}
+.sheet-level-btn span{font-size:16px;width:20px;text-align:center}
+.sheet-sidebar-note{margin-top:16px;padding:12px;border-radius:13px;background:#ffffffb8;font-size:11px;line-height:1.5;color:#756b7a}
+.sheet-main{min-width:0}
+.sheet-toolbar{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,190px) minmax(150px,190px) auto;gap:10px;align-items:center;margin:0 0 18px}
+.sheet-toolbar .search,.sheet-toolbar .filter{width:100%;min-width:0;height:46px;margin:0}
+.sheet-reset{height:46px;min-width:125px;padding:10px 16px;display:inline-flex;align-items:center;justify-content:center;justify-self:end}
+.sheet-count{margin:0 0 16px;text-align:left}
+@media(max-width:1050px){.sheet-layout{grid-template-columns:205px minmax(0,1fr);gap:16px}.sheet-toolbar{grid-template-columns:1fr 1fr}.sheet-toolbar .search{grid-column:1/-1}.sheet-reset{grid-column:1/-1;justify-self:end}}
+@media(max-width:700px){.sheet-layout{grid-template-columns:1fr;gap:15px}.sheet-sidebar{position:static;padding:16px}.sheet-sidebar h3{margin-bottom:5px}.sheet-sidebar p{margin-bottom:12px}.sheet-level-list{display:flex;gap:7px;overflow-x:auto;padding:2px 1px 7px;scrollbar-width:thin}.sheet-level-btn{width:auto;flex:0 0 auto;white-space:nowrap}.sheet-sidebar-note{margin-top:8px}.sheet-toolbar{grid-template-columns:1fr}.sheet-toolbar .search{grid-column:auto}.sheet-reset{grid-column:auto;justify-self:stretch;width:100%}.sheet-count{text-align:left}}
+
 /* 2.1 usability fixes */
 [hidden]{display:none!important}
 .sheet-reset{min-height:44px;white-space:nowrap}
@@ -190,6 +210,23 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
       </div>
     </div>
 
+    <div class="sheet-layout">
+      <aside class="sheet-sidebar" aria-label="Browse worksheets by class">
+        <div class="sheet-sidebar-kicker">Find the right level</div>
+        <h3>Browse by class</h3>
+        <p>Choose a learning stage to see worksheets made for that level.</p>
+        <div class="sheet-level-list">
+          <button class="sheet-level-btn is-active" type="button" data-level-choice="All" onclick="chooseSheetLevel('All')"><span>🌈</span>All levels</button>
+          <button class="sheet-level-btn" type="button" data-level-choice="Preschool" onclick="chooseSheetLevel('Preschool')"><span>🧸</span>Preschool</button>
+          <button class="sheet-level-btn" type="button" data-level-choice="Nursery" onclick="chooseSheetLevel('Nursery')"><span>🌱</span>Nursery</button>
+          <button class="sheet-level-btn" type="button" data-level-choice="LKG" onclick="chooseSheetLevel('LKG')"><span>🎨</span>LKG</button>
+          <button class="sheet-level-btn" type="button" data-level-choice="UKG" onclick="chooseSheetLevel('UKG')"><span>🚀</span>UKG</button>
+          <button class="sheet-level-btn" type="button" data-level-choice="Class 1" onclick="chooseSheetLevel('Class 1')"><span>📘</span>Class 1</button>
+          <button class="sheet-level-btn" type="button" data-level-choice="Class 2" onclick="chooseSheetLevel('Class 2')"><span>📗</span>Class 2</button>
+        </div>
+        <div class="sheet-sidebar-note">💡 Tip: You can combine a class choice with search and category filters.</div>
+      </aside>
+      <div class="sheet-main">
     <div class="sheet-toolbar">
       <input class="search" type="search" id="sheetSearch" placeholder="🔎  Search worksheets..." aria-label="Search worksheets">
       <select class="filter" id="sheetCategory" aria-label="Filter worksheets by category">
@@ -218,15 +255,15 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 
       <article class="sheet-card" data-category="Learning" data-level="Nursery,LKG,UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🔢</div><div class="sheet-card-content"><span class="sheet-category">Learning</span><h3>Number Practice</h3><p>Build number skills with counting, number recognition and tracing.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/number-practice.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/number-practice.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <article class="sheet-card" data-category="Colouring" data-level="Preschool,Nursery,LKG,UKG"><div class="sheet-art" aria-hidden="true">🐼</div><div class="sheet-card-content"><span class="sheet-category">Colouring</span><h3>Learn Colors</h3><p>Learn colors with fun activity.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/colors.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/colors.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Colouring" data-level="Preschool,Nursery,LKG,UKG"><div class="sheet-art" aria-hidden="true">🐼</div><div class="sheet-card-content"><span class="sheet-category">Colouring</span><h3>Animal Coloring</h3><p>Bring friendly animal pictures to life with colour.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/animal-coloring.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/animal-coloring.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
       <article class="sheet-card" data-category="Activity" data-level="Preschool,Nursery,LKG,UKG"><div class="sheet-art" aria-hidden="true">🧩</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Fun Activities</h3><p>Enjoy playful puzzles, games and brain-teasing activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/fun-activities.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/fun-activities.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
       <article class="sheet-card" data-category="Writing" data-level="LKG,UKG,Class 1"><div class="sheet-art" aria-hidden="true">✍️</div><div class="sheet-card-content"><span class="sheet-category">Writing</span><h3>Handwriting & Tracing</h3><p>Practise pencil control, letter formation and early writing.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/handwriting-tracing.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/handwriting-tracing.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <article class="sheet-card" data-category="Maths" data-level="Preschool"><div class="sheet-art" aria-hidden="true">➕</div><div class="sheet-card-content"><span class="sheet-category">Maths</span><h3>Maths Practice</h3><p>Try counting numbers with images activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/maths.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/maths.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Maths" data-level="UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">➕</div><div class="sheet-card-content"><span class="sheet-category">Maths</span><h3>Maths Practice</h3><p>Try simple addition, subtraction and number activities.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/maths-practice.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/maths-practice.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <article class="sheet-card" data-category="Science & Nature" data-level="UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🌱</div><div class="sheet-card-content"><span class="sheet-category">Science & Nature</span><h3>Nature Explorer</h3><p>Discover wild animals around the world.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/WildAnimals.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/WildAnimals.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Science & Nature" data-level="UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🌱</div><div class="sheet-card-content"><span class="sheet-category">Science & Nature</span><h3>Nature Explorer</h3><p>Discover plants, animals, weather and the world around us.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/nature-explorer.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/nature-explorer.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
       <article class="sheet-card" data-category="Puzzles" data-level="Preschool,Nursery,LKG,UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🧠</div><div class="sheet-card-content"><span class="sheet-category">Puzzles</span><h3>Puzzles & Brain Games</h3><p>Have fun with mazes, matching, patterns and spot-the-difference.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/puzzles-brain-games.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/puzzles-brain-games.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
@@ -236,16 +273,11 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 
       <article class="sheet-card" data-category="Seasonal" data-level="Preschool,Nursery,LKG,UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🎉</div><div class="sheet-card-content"><span class="sheet-category">Seasonal</span><h3>Festivals & Seasons</h3><p>Creative colouring and activity pages for special days and seasons.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/festivals-seasons.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/festivals-seasons.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <article class="sheet-card" data-category="Activity" data-level="Preschool,Nursery,LKG,UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Creative Doodle & Draw</h3><p>Open-ended drawing prompts for imagination and creativity.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/doodle-draw-sheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/doodle-draw-sheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
+      <article class="sheet-card" data-category="Activity" data-level="Preschool,Nursery,LKG,UKG,Class 1,Class 2"><div class="sheet-art" aria-hidden="true">🎨</div><div class="sheet-card-content"><span class="sheet-category">Activity</span><h3>Creative Doodle & Draw</h3><p>Open-ended drawing prompts for imagination and creativity.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/doodle-draw-sheets.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/doodle-draw-sheets.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
 
-      <article class="sheet-card" data-category="Preschool" data-level="Preschool,Nursery"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Trace the wavy lines.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/trace-wavy-lines.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/trace-wavy-lines.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-       <article class="sheet-card" data-category="Preschool" data-level="Preschool,Nursery"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Trace the different lines and shapes.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/trace-lines.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/trace-lines.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-       <article class="sheet-card" data-category="Preschool" data-level="Preschool,Nursery"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Trace the vertical lines.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/vertical-lines.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/vertical-lines.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-         <article class="sheet-card" data-category="Preschool" data-level="Preschool,Nursery"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Trace the triangle shape.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/triangle.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/triangle.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-         <article class="sheet-card" data-category="Preschool" data-level="Preschool,Nursery"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Trace the square shape.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/square.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/square.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-      <article class="sheet-card" data-category="Preschool" data-level="Preschool,Nursery"><div class="sheet-art" aria-hidden="true">🧸</div><div class="sheet-card-content"><span class="sheet-category">Preschool</span><h3>Preschool Starter Pack</h3><p>Trace the sleeping lines.</p><div class="sheet-actions"><a class="sheet-action download-btn" href="sheets/sleeping.pdf" download><span class="action-icon" aria-hidden="true">⬇</span><span class="action-label">Download PDF</span></a><a class="sheet-action print-btn" href="sheets/sleeping.pdf" target="_blank" rel="noopener" title="Open PDF to print"><span class="action-icon" aria-hidden="true">🖨</span><span class="action-label">Print</span></a></div></div></article>
-      
       <p class="no-sheets" id="noSheets" role="status" hidden>No worksheets match these filters. Try a different search or clear the filters.</p>
+    </div>
+      </div>
     </div>
   </div>
 </section>
@@ -408,12 +440,20 @@ function renderSheets() {
 
 sheetSearch.addEventListener('input', renderSheets);
 sheetCategory.addEventListener('change', renderSheets);
-sheetLevel.addEventListener('change', renderSheets);
-function chooseSheetLevel(level){sheetLevel.value=level;renderSheets();}
-function resetSheetFilters(){sheetSearch.value='';sheetCategory.value='All';sheetLevel.value='All';renderSheets();}
+sheetLevel.addEventListener('change', ()=>{updateSheetLevelButtons();renderSheets();});
+function updateSheetLevelButtons(){
+  document.querySelectorAll('.sheet-level-btn').forEach(button=>{
+    const active=button.dataset.levelChoice===sheetLevel.value;
+    button.classList.toggle('is-active',active);
+    button.setAttribute('aria-pressed',String(active));
+  });
+}
+function chooseSheetLevel(level){sheetLevel.value=level;updateSheetLevelButtons();renderSheets();}
+function resetSheetFilters(){sheetSearch.value='';sheetCategory.value='All';sheetLevel.value='All';updateSheetLevelButtons();renderSheets();}
 
 document.getElementById('copyrightYear').textContent=new Date().getFullYear();
 render();
+updateSheetLevelButtons();
 renderSheets();
 </script>
 </body></html>
