@@ -160,6 +160,16 @@ footer{margin-top:0}.foot{align-items:flex-start}.footer-brand{max-width:280px}.
 .policy-wrap a{color:#a9436d;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.policy-section{padding:32px 0}.policy-wrap{border-radius:16px}.policy-wrap h3{margin-top:22px}}
 
+/* Download button visibility and tap-target fix */
+.sheet-actions{grid-template-columns:1fr;gap:10px}
+.sheet-action{width:100%;min-width:0;min-height:52px;padding:13px 16px;gap:10px;font-size:14px;white-space:normal;border-radius:14px}
+.sheet-action .action-icon{flex:0 0 24px;width:24px;height:24px;font-size:21px}
+.sheet-action .action-label{display:inline-block;overflow:visible;text-overflow:clip;white-space:normal;font-size:14px;line-height:1.25}
+.download-btn{background:var(--rose);color:#fff;border:1px solid var(--rose);box-shadow:0 4px 12px #d96f982b}
+.download-btn:hover{background:#c65d85;border-color:#c65d85}
+.print-btn{background:#fff;border:1px solid #e8bfd0;color:#a9436d}
+@media(max-width:600px){.sheet-actions{grid-template-columns:1fr;gap:9px}.sheet-action{min-height:50px;font-size:14px;padding:12px 14px}}
+@media(max-width:380px){.sheet-actions{grid-template-columns:1fr}.sheet-action{width:100%;min-height:50px;font-size:14px}}
 </style>
 </head>
 <body>
